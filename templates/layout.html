@@ -2,16 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>MyHome Page</title>
+	<title>{{ title }}</title>
 </head>
 <body>
 	<h1 style="text-align:center;">Main Page</h1>
-	{% if posts %}
-		{% for i in posts %}
-			<h2>{{ i.title }}</h2>
-		{% endfor %}
-	{% else %}
-		<h3>{{ title }}</h3>
-	{% endif %}
 </body>
 </html>

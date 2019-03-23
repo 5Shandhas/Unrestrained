@@ -1,10 +1,10 @@
 from flask import Flask, render_template
 from forms import RegistrationForm, LoginForm
-
+import config
 app = Flask(__name__)
 
 app.config.update(DEBUG=True)
-app.config['SECRET_KEY'] = '15615156dhiuahdkbafiuwahfw'
+app.config.from_object(config)
 
 posts = [
 	{
@@ -16,7 +16,7 @@ posts = [
 @app.route("/")
 @app.route("/home")
 def mainapp():
-	return render_template('main.html', posts=posts, title='About')
+	return render_template('index.html', posts=posts, title='About')
 
 @app.route("/about")
 def about():
